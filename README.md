@@ -50,3 +50,11 @@ sudo lsof -i :[port]
 	/public
 	index.html：项目的HTML入口文件
 ```
+
+### Demo
+
+<img width="397" alt="image" src="https://github.com/ZH1995/baby-tracker/assets/16255718/d861dd79-70af-410d-85d2-e9907945c6b6">
+
+<img width="303" alt="image" src="https://github.com/ZH1995/baby-tracker/assets/16255718/c3fb9d1b-4072-44e0-84b9-bdb6422950fc">
+
+
