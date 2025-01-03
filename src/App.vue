@@ -1,20 +1,19 @@
 <template>
   <div>
-    <MySalaryInfo ref="salaryInfo"></MySalaryInfo>
-    <button @click="showResult">查看薪水</button>
+    <MySalaryInfo :salary-info="salaryInfo"></MySalaryInfo>
+    <button @click="showResult">薪水修改</button>
   </div>  
 </template>
 
 <script setup lang="ts">
-import {ref} from 'vue'
+import {reactive, ref} from 'vue'
 import MySalaryInfo from './components/MySalaryInfo.vue'
-let salaryInfo = ref()
-
+let salaryInfo = reactive({
+    userName:'zhangsan',
+    salary:1000
+})
 function showResult(){
-  console.log(salaryInfo)
-  console.log(salaryInfo.value)
-  console.log(salaryInfo.value.userName)
-  console.log(salaryInfo.value.salary)
+    salaryInfo.salary += 100
 }
 </script>
 

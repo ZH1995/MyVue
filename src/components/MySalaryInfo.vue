@@ -1,7 +1,7 @@
 <template>
-    姓名：<input v-model="userName"/><br/>
-    薪水：<input type="number" v-model="salary"/><br/>
-    
+    姓名：<input v-model="salaryInfo.userName"/><br/>
+    薪水：<input type="number" v-model="salaryInfo.salary"/><br/>
+    {{ salaryInfo }}
 </template>
 
 <script lang="ts">
@@ -11,10 +11,8 @@
 </script>
 
 <script setup lang="ts">
-import {ref} from 'vue'
-let userName = ref('zhangsan')
-let salary = ref(1000)
-defineExpose({userName,salary})
+import type { SalaryInfo } from '@/types/salaryInfo';
+defineProps<{salaryInfo:SalaryInfo}>()
 </script>
 
 <style></style>
