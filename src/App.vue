@@ -7,10 +7,10 @@
 </template>
 
 <script setup lang="ts">
-import {reactive, toRef} from 'vue'
+import {reactive, toRefs} from 'vue'
 let salaryInfo = reactive({userName:'zhangsan',salary:1000})
-let userName = toRef(salaryInfo, 'userName')
-let salary = toRef(salaryInfo, 'salary')
+let {userName,salary} = toRefs(salaryInfo)
+
 function addSalary(){
     salary.value += 100
     console.log(salaryInfo)
