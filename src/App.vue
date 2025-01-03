@@ -1,14 +1,18 @@
 <template>
   <div>
-    姓名：<input v-model="userName"/>{{ userName }}<br/>
-    薪水：<input type="number" v-model="salary"/>{{ salary }}<br/>
+    姓名：<input v-model="salaryInfo.userName"/>{{ salaryInfo.userName }}<br/>
+    薪水：<input type="number" v-model="salaryInfo.salary"/>{{ salaryInfo.salary }}<br/>
     <button v-on:click="addSalary">提交</button>
   </div>  
 </template>
 
 <script setup lang="ts">
-import MySalary from './components/MySalary';
-let{userName, salary, addSalary} = MySalary();
+import {reactive} from 'vue'
+let salaryInfo = reactive({userName:'zhangsan',salary:1000})
+function addSalary(){
+    salaryInfo.salary += 100
+    console.log(salaryInfo)
+}
   
 </script>
 
