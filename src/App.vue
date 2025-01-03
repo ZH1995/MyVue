@@ -1,21 +1,19 @@
 <template>
   <div>
-    姓名：<input v-model="userName"/>{{ userName }}<br/>
-    薪水：<input type="number" v-model="salary"/>{{ salary }}<br/>
-    <button v-on:click="addSalary">提交</button>
+    姓名：<input ref="name" abc="123"/><br/>
+    <button v-on:click="showRes">提交</button>
   </div>  
 </template>
 
 <script setup lang="ts">
-import {reactive, toRefs} from 'vue'
-let salaryInfo = reactive({userName:'zhangsan',salary:1000})
-let {userName,salary} = toRefs(salaryInfo)
-
-function addSalary(){
-    salary.value += 100
-    console.log(salaryInfo)
-}
-  
+import {ref} from 'vue'
+let name = ref()
+  function showRes(){
+    console.log(name)
+    console.log(name.value)
+    console.log(name.value.value)
+    console.log(name.value.getAttribute('abc'))
+  }
 </script>
 
 <style scoped>
