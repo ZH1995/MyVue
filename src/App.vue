@@ -1,22 +1,28 @@
 <template>
-  <div>
-    <MySalaryInfo :salary-info="salaryInfo"></MySalaryInfo>
-    <button @click="showResult">薪水修改</button>
-  </div>  
+  <div id="app">
+    <h1>My Vue App</h1>
+    <p>
+      <RouterLink to="/home">首页</RouterLink>
+      <RouterLink to="/about">关于</RouterLink>
+      <RouterLink to="/news">新闻</RouterLink>
+    </p>
+    <div class="content">
+      <RouterView></RouterView>
+    </div>
+  </div>
+
 </template>
 
 <script setup lang="ts">
-import {reactive, ref} from 'vue'
-import MySalaryInfo from './components/MySalaryInfo.vue'
-let salaryInfo = reactive({
-    userName:'zhangsan',
-    salary:1000
-})
-function showResult(){
-    salaryInfo.salary += 100
-}
+
 </script>
 
-<style scoped>
- 
+<style>
+  .content{
+    background-color: yellowgreen;
+    widows: 10%;
+    height: 400px;
+    border: 1cap;
+    border-radius: 10px;
+  }
 </style>
