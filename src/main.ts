@@ -9,7 +9,6 @@ import AboutPage from '@/pages/AboutPage.vue'
 import NewsPage from '@/pages/NewsPage.vue'
 
 const routes = [
-    {path:'/', redirect:"/home"},
     {path:'/home', component:HomePage},
     {path:'/about', component:AboutPage},
     {path:'/news', component:NewsPage}
@@ -19,5 +18,8 @@ const router = createRouter({
     routes:routes
 })
 let app = createApp(App)
+import { createPinia } from 'pinia'
+const pinia = createPinia()
+app.use(pinia)
 app.use(router)
 app.mount('#app')

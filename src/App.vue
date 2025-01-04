@@ -1,28 +1,22 @@
 <template>
   <div id="app">
     <h1>My Vue App</h1>
-    <p>
-      <RouterLink to="/home">首页</RouterLink>
-      <RouterLink to="/about">关于</RouterLink>
-      <RouterLink replace to="/news">新闻</RouterLink>
-    </p>
-    <div class="content">
-      <RouterView></RouterView>
-    </div>
+    
   </div>
 
 </template>
 
 <script setup lang="ts">
 
+import { storeToRefs } from 'pinia';
+import { userStore } from './store/user';
+const user = userStore()
+user.changeUserName('hello')
+console.log(user.getUserName)
+const userInfo = storeToRefs(user)
+console.log(userInfo)
 </script>
 
 <style>
-  .content{
-    background-color: yellowgreen;
-    widows: 10%;
-    height: 400px;
-    border: 1cap;
-    border-radius: 10px;
-  }
+ 
 </style>
