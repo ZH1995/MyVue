@@ -4,7 +4,7 @@
     <p>
       <RouterLink to="/home">首页</RouterLink>
       <RouterLink to="/about">关于</RouterLink>
-      <RouterLink to="/news">新闻</RouterLink>
+      <RouterLink replace to="/news">新闻</RouterLink>
     </p>
     <div class="content">
       <RouterView></RouterView>

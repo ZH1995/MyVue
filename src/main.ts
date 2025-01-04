@@ -9,6 +9,7 @@ import AboutPage from '@/pages/AboutPage.vue'
 import NewsPage from '@/pages/NewsPage.vue'
 
 const routes = [
+    {path:'/', redirect:"/home"},
     {path:'/home', component:HomePage},
     {path:'/about', component:AboutPage},
     {path:'/news', component:NewsPage}
